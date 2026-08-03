@@ -4,26 +4,27 @@ import MyFirstCommpnant from "./MyFirstCommpnant";
 import Header from "./Header";
 import Side from "./SideMenu";
 import Post from "./Post";
+import Artical from "./Artical";
 function App() {
   return (
     <div className="App">
-      <Header />
-      <div style={{ display: "flex", justifyContent: "center" }}>
-        {/* Post Continter && Side Menu */}
-        <div style={{ display: "flex", width: "60%" }}>
-          {/* Post Continter */}
-          <div style={{ width: "70%" }}>
-            <Post />
-            <Post />
-            <Post />
-            <Post />
-            <Post />
-          </div>
-          <div style={{ width: "30%" }}>
-            <Side />
-          </div>
-        </div>
-      </div>
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+        <Artical personname="ahmad" email="ahmad@gmail.com" />
+        <Artical personname="abdullah" email="ahmad@gmail.com" />
+        <Artical personname="mus" email="ahmad@gmail.com" />
+      </header>
     </div>
   );
 }
