@@ -1,4 +1,9 @@
-export default function Articale({ personname, email }) {
+export default function Articale({
+  personname,
+  email,
+  content = "no content",
+  children,
+}) {
   const date = new Date();
 
   return (
@@ -8,7 +13,7 @@ export default function Articale({ personname, email }) {
         <h3>{email}</h3>
         <h3> {date.toLocaleDateString()}</h3>
         <hr />
-        <p>tes</p>
+        <p>{children}</p>
       </div>
     </>
   );

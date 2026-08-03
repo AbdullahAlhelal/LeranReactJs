@@ -6,6 +6,8 @@ import Side from "./SideMenu";
 import Post from "./Post";
 import Artical from "./Artical";
 function App() {
+  const fisrtartical = "asfasfasfffffffffffffffffffffffffffffasfegfwegwegweg";
+  const secandartical = "asfasfasfffffffffffffffffffffffffffffasfegfwegwegweg";
   return (
     <div className="App">
       <header className="App-header">
@@ -21,8 +23,18 @@ function App() {
         >
           Learn React
         </a>
-        <Artical personname="ahmad" email="ahmad@gmail.com" />
-        <Artical personname="abdullah" email="ahmad@gmail.com" />
+        <Artical
+          content={fisrtartical}
+          personname="ahmad"
+          email="ahmad@gmail.com"
+        >
+          <h1> test</h1>
+        </Artical>
+        <Artical
+          content={secandartical}
+          personname="abdullah"
+          email="ahmad@gmail.com"
+        />
         <Artical personname="mus" email="ahmad@gmail.com" />
       </header>
     </div>
