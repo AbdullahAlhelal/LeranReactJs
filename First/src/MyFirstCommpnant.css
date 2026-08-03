@@ -1,0 +1,10 @@
+.active {
+  background-color: blue;
+}
+
+.ValidName {
+  background-color: blue;
+}
+.InValidName {
+  background-color: red;
+}
