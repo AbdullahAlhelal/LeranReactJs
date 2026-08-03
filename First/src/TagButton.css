@@ -1,0 +1,10 @@
+.tagbtn {
+  background-color: purple;
+  border: "none";
+  color: white;
+  border-radius: 15px;
+  transition: all 0.1;
+}
+.tagbtn:hover {
+  background-color: rgb(88, 0, 88);
+}
