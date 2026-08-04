@@ -2,12 +2,24 @@ import logo from "./logo.svg";
 import "./App.css";
 import MyFirstCommpnant from "./MyFirstCommpnant";
 import Header from "./Header";
-import Side from "./SideMenu";
+import MyForm from "./Myform";
 import Post from "./Post";
-import Artical from "./Artical";
+
+import MyInput from "./myinput.js";
+
 function App() {
-  const fisrtartical = "asfasfasfffffffffffffffffffffffffffffasfegfwegwegweg";
-  const secandartical = "asfasfasfffffffffffffffffffffffffffffasfegfwegwegweg";
+  const posts = [
+    { id: 1, postName: "Academ", postBody: "PostBody" },
+    { id: 2, postName: "اكاديمية", postBody: "المحتوى" },
+    {
+      id: 3,
+      postName: "اكاديمية",
+      postBody: "المحتوى",
+    },
+  ];
+  const postlist = posts.map((item) => {
+    return <Post postName={item.postName} postBody={item.postBody}></Post>;
+  });
   return (
     <div className="App">
       <header className="App-header">
@@ -23,19 +35,7 @@ function App() {
         >
           Learn React
         </a>
-        <Artical
-          content={fisrtartical}
-          personname="ahmad"
-          email="ahmad@gmail.com"
-        >
-          <h1> test</h1>
-        </Artical>
-        <Artical
-          content={secandartical}
-          personname="abdullah"
-          email="ahmad@gmail.com"
-        />
-        <Artical personname="mus" email="ahmad@gmail.com" />
+        <MyForm />
       </header>
     </div>
   );

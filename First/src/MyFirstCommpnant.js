@@ -4,9 +4,7 @@ export default function MyFirstCommpnant() {
     name: "abdullah",
     emil: "abdullah@gmaul.com",
   };
-  const emlemt = {
-    background: "red",
-  };
+
   return (
     <div>
       <button className={"active"}> click me</button>
