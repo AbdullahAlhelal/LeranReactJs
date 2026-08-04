@@ -1,4 +1,4 @@
-export default function Post() {
+export default function Post({ postName = 'no Title', postBody = 'No Body' }) {
   return (
     <div
       style={{
@@ -6,9 +6,9 @@ export default function Post() {
         margin: "20px",
       }}
     >
-      <h2>this post Title </h2>
+      <h2>{postName} </h2>
       <hr />
-      <p> this Post Body</p>
+      <p> {postBody}</p>
     </div>
   );
 }

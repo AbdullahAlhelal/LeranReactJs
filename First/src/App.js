@@ -5,6 +5,7 @@ import Header from "./Header";
 import Side from "./SideMenu";
 import Post from "./Post";
 import Artical from "./Artical";
+import SideMenu from "./SideMenu";
 function App() {
   return (
     <div className="App">
@@ -21,11 +22,21 @@ function App() {
         >
           Learn React
         </a>
-        <Artical personname="ahmad" email="ahmad@gmail.com" />
-        <Artical personname="abdullah" email="ahmad@gmail.com" />
-        <Artical personname="mus" email="ahmad@gmail.com" />
-      </header>
-    </div>
+        <div style={{ display: "flex" }}>
+          <div style={{ display: "flex" }}>
+            <div>
+              <Post postName="Academ" postBody="PostBody" />
+              <Post postName="Hello" postBody="Secand" />
+              <Post postName="Academ" postBody="PostBody" />
+              <Post postName="Academ" postBody="PostBody" />
+              <Post postName="Academ" postBody="PostBody" />
+              <Post />
+            </div>
+            <SideMenu />
+          </div>
+        </div>
+      </header >
+    </div >
   );
 }
 
