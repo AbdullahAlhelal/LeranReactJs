@@ -6,6 +6,7 @@ import Side from "./SideMenu";
 import Post from "./Post";
 import Artical from "./Artical";
 import SideMenu from "./SideMenu";
+import MyButtonWithState from "./MyButtonWithState.js";
 const ShowCatogey = true;
 function App() {
   const posts = [
@@ -31,14 +32,7 @@ function App() {
         >
           Learn React
         </a>
-        <div style={{ display: "flex" }}>
-          <div style={{ display: "flex" }}>
-            <div>
-              {postlist}
-            </div>
-            <SideMenu />
-          </div>
-        </div>
+        <MyButtonWithState />
       </header >
     </div >
   );
