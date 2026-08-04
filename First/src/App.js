@@ -8,7 +8,15 @@ import Artical from "./Artical";
 import SideMenu from "./SideMenu";
 const ShowCatogey = true;
 function App() {
-
+  const tasks = [
+    { id: 1, title: "doing smoe thing" },
+    { id: 2, title: "read course" },
+    { id: 3, title: "studing" },
+    { id: 4, title: "Celaning" },
+    { id: 5, title: "studing" }];
+  const mytask = tasks.map((task) => {
+    return (<li key={task.id} style={{ background: "red" }}> {task.title}  </li >)
+  })
   return (
     <div className="App">
       <header className="App-header">
@@ -24,19 +32,14 @@ function App() {
         >
           Learn React
         </a>
-        <div style={{ display: "flex" }}>
-          <div style={{ display: "flex" }}>
-            <div>
-              <Post postName="Academ" postBody="PostBody" />
-              <Post postName="Hello" postBody="Secand" />
-              <Post postName="Academ" postBody="PostBody" />
-              <Post postName="Academ" postBody="PostBody" />
-              <Post postName="Academ" postBody="PostBody" />
-              <Post />
-            </div>
-            <AppSideMenu />
-          </div>
+        <div>
+          <ul>
+            {mytask}
+
+
+          </ul>
         </div>
+
       </header >
     </div >
   );
