@@ -2,7 +2,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import MyFirstCommpnant from "./MyFirstCommpnant";
 import Header from "./Header";
-import Side from "./SideMenu";
+import MyForm from "./Myform";
 import Post from "./Post";
 
 import MyInput from "./myinput.js";
@@ -31,7 +31,7 @@ function App() {
         >
           Learn React
         </a>
-        <MyInput />
+        <MyForm />
       </header >
     </div >
   );
