@@ -4,10 +4,9 @@ import MyFirstCommpnant from "./MyFirstCommpnant";
 import Header from "./Header";
 import Side from "./SideMenu";
 import Post from "./Post";
-import Artical from "./Artical";
-import SideMenu from "./SideMenu";
-import MyButtonWithState from "./MyButtonWithState.js";
-const ShowCatogey = true;
+
+import MyInput from "./myinput.js";
+
 function App() {
   const posts = [
     { id: 1, postName: "Academ", postBody: "PostBody" },
@@ -32,7 +31,7 @@ function App() {
         >
           Learn React
         </a>
-        <MyButtonWithState />
+        <MyInput />
       </header >
     </div >
   );
