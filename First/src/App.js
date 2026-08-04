@@ -6,7 +6,9 @@ import Side from "./SideMenu";
 import Post from "./Post";
 import Artical from "./Artical";
 import SideMenu from "./SideMenu";
+const ShowCatogey = true;
 function App() {
+
   return (
     <div className="App">
       <header className="App-header">
@@ -32,12 +34,17 @@ function App() {
               <Post postName="Academ" postBody="PostBody" />
               <Post />
             </div>
-            <SideMenu />
+            <AppSideMenu />
           </div>
         </div>
       </header >
     </div >
   );
 }
-
+function AppSideMenu() {
+  if (ShowCatogey) {
+    return <SideMenu />
+  }
+  else return <div></div>
+}
 export default App;

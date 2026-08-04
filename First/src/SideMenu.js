@@ -8,7 +8,7 @@ export default function SideMenu() {
       </div></TagButton>
       <TagButton title="أخر المقالات" ></TagButton>
       <TagButton title="مميز" > </TagButton>
-      <TagButton title="أكثر قراءة" />
+      <TagButton />
     </div>
   );
 }
