@@ -8,15 +8,14 @@ import Artical from "./Artical";
 import SideMenu from "./SideMenu";
 const ShowCatogey = true;
 function App() {
-  const tasks = [
-    { id: 1, title: "doing smoe thing" },
-    { id: 2, title: "read course" },
-    { id: 3, title: "studing" },
-    { id: 4, title: "Celaning" },
-    { id: 5, title: "studing" }];
-  const mytask = tasks.map((task) => {
-    return (<li key={task.id} style={{ background: "red" }}> {task.title}  </li >)
-  })
+  const posts = [
+    { id: 1, postName: "Academ", postBody: "PostBody" },
+    { id: 2, postName: "اكاديمية", postBody: "المحتوى" },
+    {
+      id: 3, postName: "اكاديمية", postBody: "المحتوى"
+    }
+  ];
+  const postlist = posts.map((item) => { return <Post postName={item.postName} postBody={item.postBody}></Post> })
   return (
     <div className="App">
       <header className="App-header">
@@ -32,22 +31,17 @@ function App() {
         >
           Learn React
         </a>
-        <div>
-          <ul>
-            {mytask}
-
-
-          </ul>
+        <div style={{ display: "flex" }}>
+          <div style={{ display: "flex" }}>
+            <div>
+              {postlist}
+            </div>
+            <SideMenu />
+          </div>
         </div>
-
       </header >
     </div >
   );
 }
-function AppSideMenu() {
-  if (ShowCatogey) {
-    return <SideMenu />
-  }
-  else return <div></div>
-}
+
 export default App;
