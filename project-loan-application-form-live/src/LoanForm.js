@@ -1,7 +1,7 @@
 import "./FormStyles.css";
 import Modal from "./Modal";
-import MyComponent from "./MyComponent.js";
 import { useState } from "react";
+import MyComponent from "./MyComponent";
 
 export default function LoanForm() {
   const [errorMessage, setErrorMessage] = useState(null);
@@ -37,6 +37,18 @@ export default function LoanForm() {
       setShowModal(false);
     }
   }
+
+  function handlePhoneNumberInputChange(value) {
+    setLoanInputs({ ...loanInputs, phoneNumber: value });
+  }
+
+  function handleNameInputChange(value) {
+    setLoanInputs({ ...loanInputs, name: value });
+  }
+
+  function handleAgeInputChange(value) {
+    setLoanInputs({ ...loanInputs, age: value });
+  }
   return (
     <div
       onClick={handleDivClick}
@@ -47,32 +59,22 @@ export default function LoanForm() {
         <h1>Requesting a Loan</h1>
         <hr></hr>
 
-        <label>Name:</label>
-        <input
-          value={loanInputs.name}
-          onChange={(event) => {
-            setLoanInputs({ ...loanInputs, name: event.target.value });
-          }}
-        />
         <MyComponent
-          currentvalue={loanInputs}
-          value={loanInputs.phoneNumber}
-          handelOnchange={setLoanInputs}
+          inputName="dsfdsfds"
+          handleChangeComponent={handleNameInputChange}
+          valueComponent={loanInputs.name}
         />
-        {/* <label>Phone Number:</label>
-        <input
-          value={loanInputs.phoneNumber}
-          onChange={(event) => {
-            setLoanInputs({ ...loanInputs, phoneNumber: event.target.value });
-          }}
-        /> */}
 
-        <label>Age:</label>
-        <input
-          value={loanInputs.age}
-          onChange={(event) => {
-            setLoanInputs({ ...loanInputs, age: event.target.value });
-          }}
+        <MyComponent
+          inputName="phone number"
+          handleChangeComponent={handlePhoneNumberInputChange}
+          valueComponent={loanInputs.phoneNumber}
+        />
+
+        <MyComponent
+          inputName="Age:"
+          handleChangeComponent={handleAgeInputChange}
+          valueComponent={loanInputs.age}
         />
 
         <label style={{ marginTop: "30px" }}>Are you an employee?</label>

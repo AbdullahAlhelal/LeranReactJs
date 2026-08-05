@@ -1,13 +1,18 @@
-export default function Mycompnent({ value, handelOnchange, currentvalue }) {
+import MyInput from "./MyInput";
+export default function MyComponent({
+  valueComponent,
+  handleChangeComponent,
+  inputName,
+}) {
   return (
-    <div>
-      <label>Phone Number:</label>
-      <input
-        value={value}
-        onChange={(event) => {
-          handelOnchange({ ...currentvalue, phoneNumber: event.target.value });
-        }}
+    <>
+      <h1>This is the header of the component</h1>
+      <MyInput
+        inputName={inputName}
+        handleChange={handleChangeComponent}
+        value={valueComponent}
       />
-    </div>
+      <h1>This is the footer of the component</h1>
+    </>
   );
 }
