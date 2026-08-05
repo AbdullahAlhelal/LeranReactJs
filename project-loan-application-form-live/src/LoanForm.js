@@ -1,5 +1,6 @@
 import "./FormStyles.css";
 import Modal from "./Modal";
+import MyComponent from "./MyComponent.js";
 import { useState } from "react";
 
 export default function LoanForm() {
@@ -53,14 +54,18 @@ export default function LoanForm() {
             setLoanInputs({ ...loanInputs, name: event.target.value });
           }}
         />
-
-        <label>Phone Number:</label>
+        <MyComponent
+          currentvalue={loanInputs}
+          value={loanInputs.phoneNumber}
+          handelOnchange={setLoanInputs}
+        />
+        {/* <label>Phone Number:</label>
         <input
           value={loanInputs.phoneNumber}
           onChange={(event) => {
             setLoanInputs({ ...loanInputs, phoneNumber: event.target.value });
           }}
-        />
+        /> */}
 
         <label>Age:</label>
         <input
