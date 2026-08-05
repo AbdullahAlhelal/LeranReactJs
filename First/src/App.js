@@ -5,35 +5,41 @@ import Header from "./Header";
 import MyForm from "./Myform";
 import Post from "./Post";
 
+import { useState } from "react";
 import MyInput from "./myinput.js";
 
 function App() {
-  const posts = [
-    { id: 1, postName: "Academ", postBody: "PostBody" },
-    { id: 2, postName: "اكاديمية", postBody: "المحتوى" },
-    {
-      id: 3, postName: "اكاديمية", postBody: "المحتوى"
-    }
-  ];
-  const postlist = posts.map((item) => { return <Post postName={item.postName} postBody={item.postBody}></Post> })
+  const [DeivceNameToaddinput, SetDeivceNameToadd] = useState("");
+
+  const [devices, Setdevices] = useState([
+    "iphone",
+    "andriod",
+    "samsung",
+    "windows",
+  ]);
+
+  const deviceslist = devices.map((item) => {
+    return <li>{item} </li>;
+  });
+
+  function handelClieck() {
+    const newarray = [...devices];
+    debugger;
+    newarray.push(DeivceNameToaddinput);
+    Setdevices(newarray);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <MyForm />
-      </header >
-    </div >
+    <div className="App" style={{ marginTop: "10px", fontSize: "1rem" }}>
+      <ul>{deviceslist}</ul>
+      <input
+        value={DeivceNameToaddinput}
+        onChange={(event) => {
+          SetDeivceNameToadd(event.target.value);
+        }}
+      ></input>
+      <button onClick={handelClieck}>add </button>
+    </div>
   );
 }
 
