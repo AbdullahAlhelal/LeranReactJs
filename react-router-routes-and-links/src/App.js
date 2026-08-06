@@ -10,9 +10,9 @@ function App() {
     <div className="App">
       {/* ROUTES */}
       <div style={{ fontSize: "30px" }}>
-        <a href="/home">
+        <Link to="/home">
           <button style={{ fontSize: "30px" }}>Home</button>
-        </a>
+        </Link>
 
         <Link to="/hello">
           <button style={{ fontSize: "30px" }}>Hello</button>
