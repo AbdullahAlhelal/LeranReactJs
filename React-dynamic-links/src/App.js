@@ -5,6 +5,10 @@ import Hello from "./Hello";
 import Home from "./Home";
 import PostsList from "./PostsList";
 import PostDetails from "./PostDetails";
+import NotFound from "./NotFound";
+import NewPost from "./NewPost";
+import DeletePost from "./DeletePost";
+import PostsLayout from "./PostsLayout";
 import { postsContext } from "./contexts/postsContext";
 
 function App() {
@@ -45,10 +49,18 @@ function App() {
         </div>
         <Routes>
           <Route path="/hello" element={<Hello />} />
-          <Route path="/posts" element={<PostsList />} />
+
           <Route path="/" element={<Home />} />
+          <Route path="/Posts" element={<PostsLayout />}>
+            <Route index={true} element={<PostsList />} />
+            <Route path=":postId" element={<PostDetails />} />
+            <Route path="new" element={<NewPost />} />
+            <Route path="delete" element={<DeletePost />} />
+          </Route>
           <Route path="/home" element={<Home />} />
-          <Route path="/postDetails/:postId" element={<PostDetails />} />
+
+
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
     </postsContext.Provider>
