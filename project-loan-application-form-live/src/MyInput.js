@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { LoanInputContext } from "./contexts/LoanFormInputContext";
+import { LoanInputContext } from "./context/LoanFormInputContext"
 export default function MyInput() {
   const inputContext = useContext(LoanInputContext);
 

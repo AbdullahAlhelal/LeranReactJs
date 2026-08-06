@@ -2,9 +2,14 @@ import "./FormStyles.css";
 import Modal from "./Modal";
 import { useState } from "react";
 import MyComponent from "./MyComponent";
-import { LoanInputContext } from "./contexts/LoanFormInputContext";
+import { LoanInputContext } from "./context/LoanFormInputContext"
+import { UserContext } from "./context/UserContext"
+import { useContext } from "react";
+
+
 
 export default function LoanForm() {
+  const UserDate = useContext(UserContext);
   const [errorMessage, setErrorMessage] = useState(null);
   const [showModal, setShowModal] = useState(false);
   const [loanInputs, setLoanInputs] = useState({
@@ -56,6 +61,11 @@ export default function LoanForm() {
       className="flex"
       style={{ flexDirection: "column" }}
     >
+      <div style={{ color: "white" }}>
+        <p>
+          Welcome : {UserDate.name}
+        </p>
+      </div>
       <form id="loan-form" className="flex" style={{ flexDirection: "column" }}>
         <h1>Requesting a Loan</h1>
         <hr></hr>
